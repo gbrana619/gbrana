@@ -1,0 +1,46 @@
+Algorith for Assignment 1 - By Gyan Bahadur Rana
+
+Main program Flow
+
+Step 1 - Take the date of birth in four formats.
+          i.e. "YYYYMMDD", "YYYY/MM/DD", "YYYY-MM-DD", and "YYYY.MM.DD"
+
+Step 2 - Remove all the non-digit characters from the input date of birth.
+          i.e. "/",".","-"
+
+Step 3 - Extract the year, month, and day from the input data.
+
+Step 4 - Convert the provided 2 digit month into the corresponding three letter abbreviated month name.
+          i.e. Convert 10 into Oct or 01 into Jan.
+
+Step 5 - Rearrange the year, month, and day into the required format or Standard format.
+          i.e. mmm d, yyyy
+
+Step 6 - Send the rearranged data to standard output.
+
+
+Validation function
+
+leap_year() - This function will check if the provided date of birth is a leap year or not. February 
+                 month in leap year has 29 days but in non-leap years February has 28 days.
+                 Therefore, this function allow to input 29 days for February if the date of birth is a
+                 leap year if not it will deny the entry.
+
+
+Sanitize() -  This function will remove the non-digit characters i.e "/",".","-" from the input date of
+              birth and output only digit number. For instance, Input = "2020/10/20" Output = "20201020"
+
+
+Size_check() - This function will check the size of the entered date of birth. This function will only
+ 	       allow the date of birth will 8 digits. For instance, Input = "2020/10/20" is allowed but
+	       Input = "2020/101/20" is not allowed.
+
+
+Range_check() - This function will check the range of specified years and month. For instance, it will
+		allow the date of birth year from 1900 to 9999 only and for months 1 to 12 only.
+
+
+Usage() -  This function will check if the provided data is only date of birth and nothing more is
+	   accepeted. For instance, Input = "2020/10/20" is accepted but if the Input = "2020/10/20 Gyan rana"
+           this function will denies this input and provide a message like "Please enter your date of birth
+           only". 
