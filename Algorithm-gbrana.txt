@@ -1,0 +1,50 @@
+Algorith for Assignment 1 - By Gyan Bahadur Rana
+
+Main program Flow
+
+Step 1 - Take the date of birth in four formats.
+          i.e. "YYYYMMDD", "YYYY/MM/DD", "YYYY-MM-DD", and "YYYY.MM.DD"
+
+Step 2 - Remove all the non-digit characters from the input date of birth.
+          i.e. "/",".","-"
+
+Step 3 - Extract the year, month, and day from the input data.
+
+Step 4 - Convert the provided 2 digit month into the corresponding three letter abbreviated month name.
+          i.e. Convert 10 into Oct or 01 into Jan.
+
+Step 5 - Rearrange the year, month, and day into the required format or Standard format.
+          i.e. mmm d, yyyy
+
+Step 6 - Send the rearranged data to standard output.
+
+
+Validation function
+
+def leap_year(obj) - This Function checks if the given year(obj) in date of birth is leap year or not. This function returns
+                 True if the given year is leap year, otherwise Fasle. February 
+                 month in leap year has 29 days but in non-leap years February has 28 days.
+                 Therefore, this function allow to input 29 days for February if the date of birth is a
+                 leap year if not it will deny the entry. 
+
+
+def sanitize(obj1,obj2) -  This Function has 2 objects. Obj1 conatins the date of birth given by the user and obj2 conatins allowed
+              letters i.e. 0-9 digits. This function removes characters from obj1 that are not in obj2 and return new obj1. This 
+              function will remove the non-digit characters i.e "/",".","-" from the input date of
+              birth and output only digit number. For instance, Input = "2020/10/20" Output = "20201020"
+
+
+def size_check(obj, intobj) - This Function checks the lengths of the obj returned by sanitize Function. Intobj conatins the allowed size
+               in integer and if the size of obj matches the intobj then it returns True, othersies False.This function will check the 
+               size of the entered date of birth and will only allow the date of birth will 8 digits. For instance, Input = "2020/10/20"
+               is allowed but Input = "2020/101/20" is not allowed.
+
+def range_check(obj1, obj2)check() - This Function checks the range of obj1. obj2 contains the two range values in integer; first one is lower
+                                     bound of the range and second one is upper bound of the range. If the range of obj1 matches range of obj2 
+                                     then it returns True, otherwies False. This function will check the range of specified years and month. For 
+                                     instance, it will allow the date of birth year from 1900 to 9999 only and for months 1 to 12 only.
+
+
+Usage() -  This function will check if the provided data or argument is only date of birth and nothing more is
+	   accepeted. For instance, Input = "2020/10/20" is accepted but if the Input = "2020/10/20 Gyan rana"
+           this function will reject this input and provide a usage message like "Usage: a1_gbrana.py YYYYMMDD|YYYY-MM-DD|YYYY/MM/DD|YYYY.MM.DD".
